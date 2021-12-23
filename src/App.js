@@ -1,11 +1,13 @@
-import {BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Detail from "./routes/Detail";
 import Home from "./routes/Home";
-
 function App() {
   return (
     <Router>
       <Switch>
+        <Route path="/abot-us">
+          <h1>Hello</h1>
+        </Route>
         <Route path="/movie/:id">
           <Detail />
         </Route>
@@ -18,7 +20,3 @@ function App() {
 }
 
 export default App;
-
-// /:id 원하는 변수 1,2,3,4.. 어느 페이지든 갈 수 있음
-// : 중요 그냥 /id 는 텍스트일 뿐
-// movie/121212   movie/234562  등등..
