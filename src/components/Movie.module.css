@@ -1,54 +1,104 @@
 .movie {
-  background-color: white;
-  margin-bottom: 70px;
+  position: relative;
+  overflow: hidden;
+  background-color: #f2f2f2;
+  margin-bottom: 10px;
   font-weight: 300;
-  padding: 20px;
-  border-radius: 5px;
+  padding: 20px 0;
+  border-radius: 50px;
   color: #adaeb9;
-  display: grid;
-  grid-template-columns: minmax(150px, 1fr) 2fr;
-  grid-gap: 20px;
+  /* display: grid; */
+  /* grid-template-columns: minmax(150px, 1fr) 2fr; */
+  /* grid-gap: 20px; */
   text-decoration: none;
   color: inherit;
-  box-shadow: 0 13px 27px -5px rgba(50, 50, 93, 0.25),
-    0 8px 16px -8px rgba(0, 0, 0, 0.3), 0 -6px 16px -6px rgba(0, 0, 0, 0.025);
+  box-shadow: 0 13px 27px -5px rgba(190, 190, 190, 0.914),
+    0 8px 16px -8px rgba(255, 255, 255, 0.3), 0 -6px 16px -6px rgba(255, 255, 255, 0.816);
 }
 
-.movie__img {
-  position: relative;
-  top: -50px;
-  max-width: 150px;
+.effect {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 100%;
-  margin-right: 30px;
+  /* height: 225px; */
+  /* position: relative; */
+  /* cursor: pointer; */
+}
+
+.effect .movie__img {
+  /* position: relative; */
+  /* max-width: 150px; */
+  width: 100%;
+  vertical-align: top;
+  /* img 를 div로 감싸면 100%와 버티컬얼라인 top 필수*/
   box-shadow: 0 30px 60px -12px rgba(50, 50, 93, 0.25),
     0 18px 36px -18px rgba(0, 0, 0, 0.3), 0 -12px 36px -8px rgba(0, 0, 0, 0.025);
 }
 
 .movie__title,
 .movie__year {
-  margin: 0;
+  margin: 15px 0;
   font-weight: 300;
   text-decoration: none;
+
 }
 
 .movie__title a {
-  margin-bottom: 5px;
-  font-size: 24px;
-  color: #2c2c2c;
+  /* margin: 5px; */
+  padding: 10px 5px;
+  border-radius: 50px;
+  font-size: 2rem;
+  font-weight: 500;
+  line-height: 1;
+  color: #f2f2f2;
   text-decoration: none;
+  text-shadow: 0 0 20px #fff, 0 0 30px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  transition: .3s;
+}
+.movie__title a:hover {
+  text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  color: #333;
 }
 
 .movie__genres {
   list-style: none;
   padding: 0;
   margin: 0;
+  justify-content: center;
   display: flex;
   flex-wrap: wrap;
-  margin: 5px 0px;
+  /* margin: 5px 0px; */
 }
-
+.movie__genres li::after {
+  content: ', ';
+}
+.movie__genres li:last-child::after {
+  content: '';
+}
 .movie__genres li,
 .movie__year {
-  margin-right: 10px;
+  /* margin-right: 10px; */
   font-size: 14px;
+  line-height: 1.6;
+  text-align: center;
 }
+
+.back {
+  position: absolute;
+  top: 0;
+  left: -110%;
+  color: #fff;
+  text-align: center;
+  line-height: 1.6;
+  width: 100%;
+  height: 100%;
+  border-radius: 50px;
+  background: rgba(0,0,0,0.8);
+  padding: 1rem;
+  
+  transition: 0.5s;
+}
+
+.effect:hover .back { top: 0; left: 0; }
+/* .effect .back { top: 0; left: 0; } */
